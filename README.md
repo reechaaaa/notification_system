@@ -6,7 +6,7 @@ A Python FastAPI microservice for queuing and delivering notifications (email, S
 
 ## Features
 - **REST API** to queue and retrieve notifications
-- **Notification types:** `email`, `sms`, `in_app` (dummy delivery)
+- **Notification types:** `email`, `sms`, `in_app` 
 - **RabbitMQ** for message queuing
 - **MongoDB** for notification storage
 - **Exponential backoff** retry logic for delivery failures
