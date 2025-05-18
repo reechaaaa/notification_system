@@ -34,8 +34,8 @@ notification-service/
 
 ## Prerequisites
 - Python 3.10+
-- [RabbitMQ](https://www.rabbitmq.com/download.html) running locally (default port 5672)
-- [MongoDB](https://www.mongodb.com/try/download/community) running locally (default port 27017)
+- RabbitMQ running locally (default port 5672) or using docker.
+- MongoDB running locally (default port 27017)
 
 ---
 
@@ -58,15 +58,8 @@ notification-service/
    ```
 
 4. **Start RabbitMQ and MongoDB**
-   - On macOS (RabbitMQ via Homebrew):
-     ```sh
-     brew services start rabbitmq
-     ```
-   - On macOS (MongoDB via Homebrew):
-     ```sh
-     brew services start mongodb-community
-     ```
    - On windows (RabbitMQ via Docker)
+   - Connect with MongoDb Compass
 
 ---
 
@@ -113,22 +106,9 @@ curl -X POST http://localhost:8000/notifications \
 curl http://localhost:8000/users/user123/notifications
 ```
 
----
 
-## MongoDB
-- Notifications are stored in the `notification_service` database, `notifications` collection.
-- You can view them using [MongoDB Compass](https://www.mongodb.com/products/compass) or the Mongo shell.
 
----
 
-## Troubleshooting
-- **Cannot connect to RabbitMQ:**
-  - Ensure RabbitMQ is running and accessible at `localhost:5672`.
-  - Check firewall or port conflicts.
-- **Cannot connect to MongoDB:**
-  - Ensure MongoDB is running and accessible at `localhost:27017`.
-- **ModuleNotFoundError for `app`:**
-  - The consumer script handles this by modifying `sys.path`.
 
----
+
 
